@@ -1,0 +1,42 @@
+{
+  "name": "receipt",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "merchant": {
+      "type": "string",
+      "required": true
+    },
+    "total": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "tax": {
+      "type": "number",
+      "default": 0
+    },
+    "tip": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
